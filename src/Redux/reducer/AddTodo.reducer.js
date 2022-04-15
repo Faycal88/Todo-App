@@ -1,6 +1,9 @@
+import { persistTodo } from "../action/addTask.action";
+
 const initialState = {
     todos: [],
     text: '',
+    check: false,
     selected : undefined,
 }
 
@@ -23,6 +26,17 @@ export const addTodo = (state = initialState, action) => {
             return {
                 ...state,
                 todos : todos3
+            }
+        case 'CHECK_TODO':
+            const todos5 = state.todos.map((todo, i) => { 
+                if (i == action.payload) {
+                    return { ...state, check: !todo.check ,text: todo}
+                }
+                return todo
+            })
+            setPersist(todos5)
+            return {
+                ...state,todos5
             }
         case 'EDIT_TODO':
             return { ...state, text: state.todos[action.payload], selected: action.payload }

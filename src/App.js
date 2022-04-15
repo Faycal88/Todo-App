@@ -16,7 +16,9 @@ const App = ({ deleteAll,persistTodo }) => {
       <InputField />
       <TodosList />
       <div>
-        <button style={{ cursor : 'pointer' , marginTop : '20px'}}  onClick={() => deleteAll()} >Delete All</button>
+        
+        <button style={{ cursor: 'pointer', marginTop: '20px' }} onClick={() => deleteAll()} >Delete All</button>
+        <button></button>
       </div>
       </div>
   );

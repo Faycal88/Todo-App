@@ -30,3 +30,7 @@ export const editAddTodo = obj => ({
 export const deleteAll = () => ({
     type: "DELETE_ALL"
 })
+export const checkTodo = key => ({
+    type: "CHECK_TODO",
+    payload: key
+})

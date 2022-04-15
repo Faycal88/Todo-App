@@ -5,15 +5,15 @@ import Todo from "./Task";
 const TodosList = ({todos}) => { 
     return (
         
-        <div>
+        <div style={{display : 'flex',flexDirection : 'column' ,height: '200px',overflowY:'auto',overflowX:'hidden'}} >
             {
-                todos.map((todo, i) => <Todo todo={todo}/> )
+                todos.map((todo, i) => (<Todo key={i} todo={todo} idx={i}/> ))
               }  
         </div>
     )
 }
 
-const mapStateToProps = state => ({
-    todos: state.todos
+const mapStateToProps = ({todos}) => ({
+    todos: todos
 });
 export default connect(mapStateToProps)(TodosList);
